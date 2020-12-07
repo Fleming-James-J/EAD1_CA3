@@ -1,0 +1,43 @@
+﻿@page "/randomDog"
+
+@inject HttpClient Http
+
+<h1>Random Dog</h1>
+
+<h1>Random Dog</h1>
+
+<img src="@randomDogImageURL" alt="Dog" width="500" height="600">
+
+<button class="btn btn-primary" @onclick="FetchRandomDogImg">Random Dog</button>
+
+@code {
+
+
+    public class Root
+    {
+        public string Message { get; set; }
+        public string Status { get; set; }
+    }
+
+    private Root data;
+    private string randomDogImageURL;
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        // CORS needs to be enabled for Web API endpoint
+        data = await Http.GetFromJsonAsync<Root>("https://dog.ceo/api/breeds/image/random");
+    }
+
+    private void FetchRandomDogImg()
+    {
+        randomDogImageURL = data.Message;
+    }
+
+
+}
+@*Web API Add Cors
+    services.AddCors(o => o.AddPolicy("MyCORSpolicy", builder =>
+    {
+        builder.AllowAnyOrigin();
+    }));*@
