@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\James_2\\source\\repos\\EAD1_CA_3_X00149830\\EAD1_CA_3_X00149830\\EAD1_CA_3_X00149830.csproj": {}
+    "C:\\Users\\James_2\\source\\repos\\EAD1_CA3_X00149830\\EAD1_CA_3_X00149830\\EAD1_CA_3_X00149830.csproj": {}
   },
   "projects": {
-    "C:\\Users\\James_2\\source\\repos\\EAD1_CA_3_X00149830\\EAD1_CA_3_X00149830\\EAD1_CA_3_X00149830.csproj": {
+    "C:\\Users\\James_2\\source\\repos\\EAD1_CA3_X00149830\\EAD1_CA_3_X00149830\\EAD1_CA_3_X00149830.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\James_2\\source\\repos\\EAD1_CA_3_X00149830\\EAD1_CA_3_X00149830\\EAD1_CA_3_X00149830.csproj",
+        "projectUniqueName": "C:\\Users\\James_2\\source\\repos\\EAD1_CA3_X00149830\\EAD1_CA_3_X00149830\\EAD1_CA_3_X00149830.csproj",
         "projectName": "EAD1_CA_3_X00149830",
-        "projectPath": "C:\\Users\\James_2\\source\\repos\\EAD1_CA_3_X00149830\\EAD1_CA_3_X00149830\\EAD1_CA_3_X00149830.csproj",
+        "projectPath": "C:\\Users\\James_2\\source\\repos\\EAD1_CA3_X00149830\\EAD1_CA_3_X00149830\\EAD1_CA_3_X00149830.csproj",
         "packagesPath": "C:\\Users\\James_2\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\James_2\\source\\repos\\EAD1_CA_3_X00149830\\EAD1_CA_3_X00149830\\obj\\",
+        "outputPath": "C:\\Users\\James_2\\source\\repos\\EAD1_CA3_X00149830\\EAD1_CA_3_X00149830\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

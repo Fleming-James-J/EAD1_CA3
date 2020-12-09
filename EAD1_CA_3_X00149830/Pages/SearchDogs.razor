@@ -1,0 +1,47 @@
+﻿@page "/searchDogs"
+@inject HttpClient Http
+
+<div class="container">
+
+    <img src="@dogImageURL" alt="Dog" width="500" height="600">
+</div>
+
+<input placeholder="Dog Breed" @bind="dogBreed" />
+<div>
+    <button class="btn btn-primary" @onclick="Search">Search</button>
+</div>
+
+
+    @code {
+
+        private string dogImageURL = "images/DogSearch.jpg";
+        private string searchUrl;
+        private string dogBreed;
+
+        public class Root
+        {
+            public string Message { get; set; }
+            public string Status { get; set; }
+        }
+
+        private Root data;
+        
+
+        protected override async Task OnInitializedAsync()
+        {
+
+            // CORS needs to be enabled for Web API endpoint
+            data = await Http.GetFromJsonAsync<Root>(searchUrl);
+        }
+
+        private void Search()
+        {
+            searchUrl = string.Format("https://dog.ceo/api/{0}/image/random",dogBreed);
+            dogImageURL = data.Message;
+            OnInitializedAsync();
+        }
+
+
+
+
+    }

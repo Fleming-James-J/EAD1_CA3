@@ -3,11 +3,10 @@
 @inject HttpClient Http
 
 <h1>Random Dog</h1>
-
-<h1>Random Dog</h1>
+<div class="container">
 
 <img src="@randomDogImageURL" alt="Dog" width="500" height="600">
-
+</div>
 <button class="btn btn-primary" @onclick="FetchRandomDogImg">Random Dog</button>
 
 @code {
@@ -32,6 +31,7 @@
     private void FetchRandomDogImg()
     {
         randomDogImageURL = data.Message;
+        OnInitializedAsync();
     }
 
 
