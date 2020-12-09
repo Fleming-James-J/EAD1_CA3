@@ -109,11 +109,13 @@ using EAD1_CA_3_X00149830.Shared;
 
         // CORS needs to be enabled for Web API endpoint
         data = await Http.GetFromJsonAsync<Root>("https://dog.ceo/api/breeds/image/random");
+        randomDogImageURL = data.Message;
     }
 
     private void FetchRandomDogImg()
     {
         randomDogImageURL = data.Message;
+        Console.WriteLine(randomDogImageURL);
         OnInitializedAsync();
     }
 

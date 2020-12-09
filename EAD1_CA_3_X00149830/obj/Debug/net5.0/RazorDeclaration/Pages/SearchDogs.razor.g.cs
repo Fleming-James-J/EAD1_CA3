@@ -105,7 +105,7 @@ using EAD1_CA_3_X00149830.Shared;
         }
 
         private Root data;
-        
+
 
         protected override async Task OnInitializedAsync()
         {
@@ -116,9 +116,11 @@ using EAD1_CA_3_X00149830.Shared;
 
         private void Search()
         {
-            searchUrl = string.Format("https://dog.ceo/api/{0}/image/random",dogBreed);
-            dogImageURL = data.Message;
+            searchUrl = string.Format("https://dog.ceo/api/breed/{0}/images/random", dogBreed);
             OnInitializedAsync();
+            dogImageURL = data.Message;
+            Console.WriteLine(searchUrl);
+           
         }
 
 
