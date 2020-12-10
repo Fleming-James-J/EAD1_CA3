@@ -12,38 +12,39 @@
 </div>
 
 
-    @code {
+@code {
 
-        private string dogImageURL = "images/DogSearch.jpg";
-        private string searchUrl;
-        private string dogBreed;
+    private string dogImageURL = "images/DogSearch.jpg";
+    private string searchUrl;
+    private string dogBreed;
 
-        public class Root
-        {
-            public string Message { get; set; }
-            public string Status { get; set; }
-        }
+    public class Root
+    {
+        public string Message { get; set; }
+        public string Status { get; set; }
+    }
 
-        private Root data;
-
-
-        protected override async Task OnInitializedAsync()
-        {
-
-            // CORS needs to be enabled for Web API endpoint
-            data = await Http.GetFromJsonAsync<Root>(searchUrl);
-        }
-
-        private void Search()
-        {
-            searchUrl = string.Format("https://dog.ceo/api/breed/{0}/images/random", dogBreed);
-            OnInitializedAsync();
-            dogImageURL = data.Message;
-            Console.WriteLine(searchUrl);
-           
-        }
+    private Root data;
 
 
+    protected override async Task OnInitializedAsync()
+    {
 
+        // CORS needs to be enabled for Web API endpoint
+        data = await Http.GetFromJsonAsync<Root>(searchUrl);
+    }
+
+    private void Search()
+    {
+        searchUrl = string.Format("https://dog.ceo/api/breed/{0}/images/random", dogBreed);
+        OnInitializedAsync();
+        dogImageURL = data.Message;
+        
 
     }
+}
+@*Web API Add Cors
+    services.AddCors(o => o.AddPolicy("MyCORSpolicy", builder =>
+    {
+        builder.AllowAnyOrigin();
+    }));*@

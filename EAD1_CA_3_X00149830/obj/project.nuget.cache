@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ShpIy+EzoHrx2L1G3YFLzRBJGEnXiIzpB0FiLDTXNaG7flfAAuZsge1RUxYpHjKBdPGn6TQJHz//lfEcx2Onbg==",
+  "dgSpecHash": "mfWeMp0ScYSifqvYtJq9gCjaM0MnSmPJjPo/4A1lxkKJv+1A2jkfBDKcx9i2ono5DTV95XHEIv8qgseysjQIJQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\James_2\\source\\repos\\EAD1_CA3_X00149830\\EAD1_CA_3_X00149830\\EAD1_CA_3_X00149830.csproj",
   "expectedPackageFiles": [
@@ -30,7 +30,7 @@
     "C:\\Users\\James_2\\.nuget\\packages\\microsoft.jsinterop.webassembly\\5.0.0\\microsoft.jsinterop.webassembly.5.0.0.nupkg.sha512",
     "C:\\Users\\James_2\\.nuget\\packages\\system.io.pipelines\\5.0.0\\system.io.pipelines.5.0.0.nupkg.sha512",
     "C:\\Users\\James_2\\.nuget\\packages\\system.net.http.json\\5.0.0\\system.net.http.json.5.0.0.nupkg.sha512",
-    "C:\\Users\\James_2\\.nuget\\packages\\microsoft.netcore.app.runtime.browser-wasm\\5.0.0\\microsoft.netcore.app.runtime.browser-wasm.5.0.0.nupkg.sha512"
+    "C:\\Users\\James_2\\.nuget\\packages\\microsoft.netcore.app.runtime.browser-wasm\\5.0.1\\microsoft.netcore.app.runtime.browser-wasm.5.0.1.nupkg.sha512"
   ],
   "logs": []
 }

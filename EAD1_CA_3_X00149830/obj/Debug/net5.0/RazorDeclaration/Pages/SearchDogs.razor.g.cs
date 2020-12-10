@@ -92,41 +92,36 @@ using EAD1_CA_3_X00149830.Shared;
         #pragma warning restore 1998
 #nullable restore
 #line 15 "C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\Pages\SearchDogs.razor"
-           
+       
 
-        private string dogImageURL = "images/DogSearch.jpg";
-        private string searchUrl;
-        private string dogBreed;
+    private string dogImageURL = "images/DogSearch.jpg";
+    private string searchUrl;
+    private string dogBreed;
 
-        public class Root
-        {
-            public string Message { get; set; }
-            public string Status { get; set; }
-        }
+    public class Root
+    {
+        public string Message { get; set; }
+        public string Status { get; set; }
+    }
 
-        private Root data;
-
-
-        protected override async Task OnInitializedAsync()
-        {
-
-            // CORS needs to be enabled for Web API endpoint
-            data = await Http.GetFromJsonAsync<Root>(searchUrl);
-        }
-
-        private void Search()
-        {
-            searchUrl = string.Format("https://dog.ceo/api/breed/{0}/images/random", dogBreed);
-            OnInitializedAsync();
-            dogImageURL = data.Message;
-            Console.WriteLine(searchUrl);
-           
-        }
+    private Root data;
 
 
+    protected override async Task OnInitializedAsync()
+    {
 
+        // CORS needs to be enabled for Web API endpoint
+        data = await Http.GetFromJsonAsync<Root>(searchUrl);
+    }
 
-    
+    private void Search()
+    {
+        searchUrl = string.Format("https://dog.ceo/api/breed/{0}/images/random", dogBreed);
+        OnInitializedAsync();
+        dogImageURL = data.Message;
+        Console.WriteLine(searchUrl);
+
+    }
 
 #line default
 #line hidden
