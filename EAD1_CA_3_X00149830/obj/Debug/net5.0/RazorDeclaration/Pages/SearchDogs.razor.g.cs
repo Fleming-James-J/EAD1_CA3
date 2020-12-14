@@ -95,7 +95,7 @@ using EAD1_CA_3_X00149830.Shared;
        
 
     private string dogImageURL = "images/DogSearch.jpg";
-    private string searchUrl;
+    private string searchUrl = "https://dog.ceo/api/breeds/image/random";
     private string dogBreed;
 
     public class Root
@@ -117,9 +117,10 @@ using EAD1_CA_3_X00149830.Shared;
     private void Search()
     {
         searchUrl = string.Format("https://dog.ceo/api/breed/{0}/images/random", dogBreed);
-        OnInitializedAsync();
         dogImageURL = data.Message;
-        
+        OnInitializedAsync();
+
+
 
     }
 

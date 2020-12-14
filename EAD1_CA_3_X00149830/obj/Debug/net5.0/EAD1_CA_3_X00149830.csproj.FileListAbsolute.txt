@@ -1036,7 +1036,6 @@ C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\n
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\EAD1_CA_3_X00149830.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\EAD1_CA_3_X00149830.RazorComponent.input.cache
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\RazorDeclaration\App.razor.g.cs
-C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\RazorDeclaration\Pages\Counter.razor.g.cs
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\RazorDeclaration\Pages\FetchData.razor.g.cs
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\RazorDeclaration\Pages\RandomDog.razor.g.cs
@@ -1050,7 +1049,6 @@ C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\n
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\EAD1_CA_3_X00149830.TagHelpers.output.cache
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\EAD1_CA_3_X00149830.RazorCoreGenerate.cache
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\Razor\App.razor.g.cs
-C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\Razor\Pages\Counter.razor.g.cs
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\Razor\Pages\FetchData.razor.g.cs
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\Razor\Pages\Index.razor.g.cs
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\Razor\Pages\RandomDog.razor.g.cs

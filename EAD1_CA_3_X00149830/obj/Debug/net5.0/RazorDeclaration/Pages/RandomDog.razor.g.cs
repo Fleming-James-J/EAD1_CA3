@@ -111,8 +111,12 @@ using EAD1_CA_3_X00149830.Shared;
 
         // CORS needs to be enabled for Web API endpoint
         data = await Http.GetFromJsonAsync<Root>("https://dog.ceo/api/breeds/image/random");
-
         randomDogImageURL = data.Message;
+
+        ExtractDogType();
+
+        FormatDogType();
+
     }
 
     //extracts the type of dog from the url by removing leadURL and then removing everything after the /
@@ -125,10 +129,10 @@ using EAD1_CA_3_X00149830.Shared;
         int firstForwardSlash = dogtype.IndexOf('/');
 
         dogtype = dogtype.Remove(firstForwardSlash);
-  
+
     }
 
-    //Formats the dog type extracted from the response URL 
+    //Formats the dog type extracted from the response URL
     private void FormatDogType()
     {
         //Capitalizes the first letter of the dog type
@@ -137,19 +141,19 @@ using EAD1_CA_3_X00149830.Shared;
         //if the dog type has a sub breed it is joined with a hyphen and the breed is first for example terrier-silky
         //this check for the hyphen, substrings dog type into breed and sub breed, then capitilzes sub breed
         //finally changes dogtype to the more familiar subBreed Breed format we are used to.
-        
+
         if (dogtype.Contains('-'))
         {
             string breed, subBreed;
             int hyphenLoc = dogtype.IndexOf('-');
             breed = dogtype.Substring(0, hyphenLoc);
-            subBreed = dogtype.Substring(hyphenLoc+1);
+            subBreed = dogtype.Substring(hyphenLoc + 1);
 
             subBreed = char.ToUpper(subBreed[0]) + subBreed.Substring(1);
 
             dogtype = subBreed + " " + breed;
         }
-        
+
     }
 
     private void FetchRandomDogImg()
@@ -159,9 +163,9 @@ using EAD1_CA_3_X00149830.Shared;
             randomDogImageURL = data.Message;
 
             ExtractDogType();
-            
+
             FormatDogType();
-            
+
             Console.WriteLine(randomDogImageURL);
             OnInitializedAsync();
         }
@@ -173,7 +177,6 @@ using EAD1_CA_3_X00149830.Shared;
 
     }
 
-        
 
 #line default
 #line hidden
