@@ -91,7 +91,7 @@ using EAD1_CA_3_X00149830.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 12 "C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\Pages\RandomDog.razor"
+#line 13 "C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\Pages\RandomDog.razor"
        
 
 
@@ -103,23 +103,77 @@ using EAD1_CA_3_X00149830.Shared;
 
     private Root data;
     private string randomDogImageURL;
+    private string errorImageURL = "images/DogNotFound.jpg";
+    private string dogtype = "";
 
     protected override async Task OnInitializedAsync()
     {
 
         // CORS needs to be enabled for Web API endpoint
         data = await Http.GetFromJsonAsync<Root>("https://dog.ceo/api/breeds/image/random");
+
         randomDogImageURL = data.Message;
+    }
+
+    //extracts the type of dog from the url by removing leadURL and then removing everything after the /
+    private void ExtractDogType()
+    {
+        string leadURL = "https://images.dog.ceo/breeds/";
+
+        dogtype = randomDogImageURL.Remove(0, leadURL.Length);
+
+        int firstForwardSlash = dogtype.IndexOf('/');
+
+        dogtype = dogtype.Remove(firstForwardSlash);
+  
+    }
+
+    //Formats the dog type extracted from the response URL 
+    private void FormatDogType()
+    {
+        //Capitalizes the first letter of the dog type
+        dogtype = char.ToUpper(dogtype[0]) + dogtype.Substring(1);
+
+        //if the dog type has a sub breed it is joined with a hyphen and the breed is first for example terrier-silky
+        //this check for the hyphen, substrings dog type into breed and sub breed, then capitilzes sub breed
+        //finally changes dogtype to the more familiar subBreed Breed format we are used to.
+        
+        if (dogtype.Contains('-'))
+        {
+            string breed, subBreed;
+            int hyphenLoc = dogtype.IndexOf('-');
+            breed = dogtype.Substring(0, hyphenLoc);
+            subBreed = dogtype.Substring(hyphenLoc+1);
+
+            subBreed = char.ToUpper(subBreed[0]) + subBreed.Substring(1);
+
+            dogtype = subBreed + " " + breed;
+        }
+        
     }
 
     private void FetchRandomDogImg()
     {
-        randomDogImageURL = data.Message;
-        Console.WriteLine(randomDogImageURL);
-        OnInitializedAsync();
+        if (data.Status == "success")
+        {
+            randomDogImageURL = data.Message;
+
+            ExtractDogType();
+            
+            FormatDogType();
+            
+            Console.WriteLine(randomDogImageURL);
+            OnInitializedAsync();
+        }
+        else
+        {
+            randomDogImageURL = errorImageURL;
+        }
+
+
     }
 
-
+        
 
 #line default
 #line hidden

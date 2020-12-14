@@ -119,7 +119,7 @@ using EAD1_CA_3_X00149830.Shared;
         searchUrl = string.Format("https://dog.ceo/api/breed/{0}/images/random", dogBreed);
         OnInitializedAsync();
         dogImageURL = data.Message;
-        Console.WriteLine(searchUrl);
+        
 
     }
 
