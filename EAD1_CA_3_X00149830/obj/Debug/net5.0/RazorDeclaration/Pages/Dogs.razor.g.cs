@@ -91,7 +91,7 @@ using EAD1_CA_3_X00149830.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 19 "C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\Pages\Dogs.razor"
+#line 44 "C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\Pages\Dogs.razor"
        
 
 
@@ -110,6 +110,8 @@ using EAD1_CA_3_X00149830.Shared;
     private string imageURL = "https://dog.ceo/api/breeds/image/random";
     private string errormessage;
 
+    private List<string> seenDogbreeds = new List<string>();
+
     private string dogBreed;
 
     protected override async Task OnInitializedAsync()
@@ -123,6 +125,8 @@ using EAD1_CA_3_X00149830.Shared;
             ExtractDogType();
 
             FormatDogType();
+
+            AddDogBreedToList();
         }
         catch (Exception e)
         {
@@ -130,7 +134,8 @@ using EAD1_CA_3_X00149830.Shared;
         }
 
     }
-    protected  async void GetDogData()
+
+    protected async void GetDogData()
     {
         try
         {
@@ -141,6 +146,8 @@ using EAD1_CA_3_X00149830.Shared;
             ExtractDogType();
 
             FormatDogType();
+
+            AddDogBreedToList();
         }
         catch (Exception e)
         {
@@ -201,6 +208,9 @@ using EAD1_CA_3_X00149830.Shared;
 
             FormatDogType();
 
+            AddDogBreedToList();
+
+
         }
         else
         {
@@ -224,6 +234,8 @@ using EAD1_CA_3_X00149830.Shared;
 
             FormatDogType();
 
+            AddDogBreedToList();
+
         }
         else
         {
@@ -233,10 +245,13 @@ using EAD1_CA_3_X00149830.Shared;
 
     }
 
-    private void DogNotFound()
+    private void AddDogBreedToList()
     {
-        dogImageURL = errorImageURL;
-        dogType = "Dog Not Found";
+        if (!seenDogbreeds.Contains(dogType))
+        {
+            //adds it to front of list so last dog seen is at top of list
+            seenDogbreeds.Insert(0,dogType);
+        }
     }
 
 

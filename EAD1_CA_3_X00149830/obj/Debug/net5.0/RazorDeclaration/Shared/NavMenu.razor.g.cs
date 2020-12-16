@@ -90,7 +90,7 @@ using EAD1_CA_3_X00149830.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 33 "C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\Shared\NavMenu.razor"
+#line 23 "C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 

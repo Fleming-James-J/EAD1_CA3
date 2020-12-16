@@ -2,16 +2,42 @@
 
 @inject HttpClient Http
 
-<h1>Random Dog</h1>
-<div class="container">
+
+<div class="container-fluid text-center">
     <img src="@dogImageURL" alt="@dogType" width="500" height="600">
     <h3>@dogType</h3>
-</div>
+
 <input placeholder="Dog Breed" @bind="dogBreed" />
-<div>
+
     <button class="btn btn-primary" @onclick="Search">Search</button>
     <button class="btn btn-primary" @onclick="FetchRandomDogImg">Random Dog</button>
-    <button class="btn btn-primary" @onclick="DogNotFound">404</button>
+</div>
+
+
+<div class="container-fluid text-center">
+    <h3>Previously Seen Dogs </h3>
+    @if (seenDogbreeds == null)
+    {
+        <p><em>Loading data...</em></p>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Dog Breed</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var breed in seenDogbreeds)
+                {
+                    <tr>
+                        <td>@breed</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
 </div>
 @errormessage
 
@@ -33,6 +59,8 @@
     private string imageURL = "https://dog.ceo/api/breeds/image/random";
     private string errormessage;
 
+    private List<string> seenDogbreeds = new List<string>();
+
     private string dogBreed;
 
     protected override async Task OnInitializedAsync()
@@ -46,6 +74,8 @@
             ExtractDogType();
 
             FormatDogType();
+
+            AddDogBreedToList();
         }
         catch (Exception e)
         {
@@ -53,6 +83,7 @@
         }
 
     }
+
     protected async void GetDogData()
     {
         try
@@ -64,6 +95,8 @@
             ExtractDogType();
 
             FormatDogType();
+
+            AddDogBreedToList();
         }
         catch (Exception e)
         {
@@ -124,6 +157,9 @@
 
             FormatDogType();
 
+            AddDogBreedToList();
+
+
         }
         else
         {
@@ -147,6 +183,8 @@
 
             FormatDogType();
 
+            AddDogBreedToList();
+
         }
         else
         {
@@ -156,10 +194,13 @@
 
     }
 
-    private void DogNotFound()
+    private void AddDogBreedToList()
     {
-        dogImageURL = errorImageURL;
-        dogType = "Dog Not Found";
+        if (!seenDogbreeds.Contains(dogType))
+        {
+            //adds it to front of list so last dog seen is at top of list
+            seenDogbreeds.Insert(0,dogType);
+        }
     }
 
 }

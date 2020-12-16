@@ -1036,10 +1036,7 @@ C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\n
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\EAD1_CA_3_X00149830.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\EAD1_CA_3_X00149830.RazorComponent.input.cache
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\RazorDeclaration\App.razor.g.cs
-C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\RazorDeclaration\Pages\FetchData.razor.g.cs
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
-C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\RazorDeclaration\Pages\RandomDog.razor.g.cs
-C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\RazorDeclaration\Shared\NavMenu.razor.g.cs
@@ -1049,10 +1046,7 @@ C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\n
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\EAD1_CA_3_X00149830.TagHelpers.output.cache
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\EAD1_CA_3_X00149830.RazorCoreGenerate.cache
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\Razor\App.razor.g.cs
-C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\Razor\Pages\FetchData.razor.g.cs
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\Razor\Pages\Index.razor.g.cs
-C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\Razor\Pages\RandomDog.razor.g.cs
-C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\Razor\Shared\SurveyPrompt.razor.g.cs
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\Razor\_Imports.razor.g.cs
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\Razor\Shared\MainLayout.razor.g.cs
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\Razor\Shared\NavMenu.razor.g.cs
@@ -1067,8 +1061,6 @@ C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\n
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\EAD1_CA_3_X00149830.dll
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\ref\EAD1_CA_3_X00149830.dll
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\EAD1_CA_3_X00149830.pdb
-C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\RazorDeclaration\Pages\SearchDogs.razor.g.cs
-C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\Razor\Pages\SearchDogs.razor.g.cs
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\bin\Debug\net5.0\wwwroot\_framework\dotnet.5.0.1.js.gz
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\bin\Debug\net5.0\wwwroot\_framework\dotnet.5.0.1.js
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\build-gz\sEJAc5wI.gz
