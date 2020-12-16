@@ -1067,8 +1067,6 @@ C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\n
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\EAD1_CA_3_X00149830.dll
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\ref\EAD1_CA_3_X00149830.dll
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\EAD1_CA_3_X00149830.pdb
-C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\RazorDeclaration\Pages\ListDogs.razor.g.cs
-C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\Razor\Pages\ListDogs.razor.g.cs
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\RazorDeclaration\Pages\SearchDogs.razor.g.cs
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\Razor\Pages\SearchDogs.razor.g.cs
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\bin\Debug\net5.0\wwwroot\_framework\dotnet.5.0.1.js.gz
@@ -1268,3 +1266,5 @@ C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\n
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\build-gz\WnL63Zid.gz
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\build-gz\ds0UbcYB.gz
 C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\build-gz\RMsjMDAX.gz
+C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\RazorDeclaration\Pages\Dogs.razor.g.cs
+C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830\obj\Debug\net5.0\Razor\Pages\Dogs.razor.g.cs

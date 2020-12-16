@@ -1,0 +1,153 @@
+﻿@page "/Dogs"
+
+@inject HttpClient Http
+
+<h1>Random Dog</h1>
+<div class="container">
+
+    <img src="@dogImageURL" alt="@dogType" width="500" height="600">
+    <h3>@dogType</h3>
+</div>
+<input placeholder="Dog Breed" @bind="dogBreed" />
+<div>
+    <button class="btn btn-primary" @onclick="Search">Search</button>
+    <button class="btn btn-primary" @onclick="FetchRandomDogImg">Random Dog</button>
+    <button class="btn btn-primary" @onclick="DogNotFound">404</button>
+</div>
+@errormessage
+
+@code {
+
+
+    public class Root
+    {
+        public string Message { get; set; }
+        public string Status { get; set; }
+        public int Code { get; set; }
+    }
+
+    private Root data;
+
+    private string errorImageURL = "images/DogNotFound.jpg";
+    private string dogType = "";
+    private string dogImageURL;
+    private string imageURL = "https://dog.ceo/api/breeds/image/random";
+    private string errormessage;
+
+    private string dogBreed;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            // CORS needs to be enabled for Web API endpoint
+            data = await Http.GetFromJsonAsync<Root>(imageURL);
+            dogImageURL = data.Message;
+
+            ExtractDogType();
+
+            FormatDogType();
+        }
+        catch (Exception e)
+        {
+            errormessage = e.StackTrace;
+        }
+
+
+    }
+
+    //extracts the type of dog from the url by removing leadURL and then removing everything after the /
+    private void ExtractDogType()
+    {
+        string leadURL = "https://images.dog.ceo/breeds/";
+
+        dogType = dogImageURL.Remove(0, leadURL.Length);
+
+        int firstForwardSlash = dogType.IndexOf('/');
+
+        dogType = dogType.Remove(firstForwardSlash);
+
+    }
+
+    //Formats the dog type extracted from the response URL
+    private void FormatDogType()
+    {
+        //Capitalizes the first letter of the dog type
+        dogType = char.ToUpper(dogType[0]) + dogType.Substring(1);
+
+        //if the dog type has a sub breed it is joined with a hyphen and the breed is first for example terrier-silky
+        //this check for the hyphen, substrings dog type into breed and sub breed, then capitilzes sub breed
+        //finally changes dogtype to the more familiar subBreed Breed format we are used to.
+
+        if (dogType.Contains('-'))
+        {
+            string breed, subBreed;
+            int hyphenLoc = dogType.IndexOf('-');
+            breed = dogType.Substring(0, hyphenLoc);
+            subBreed = dogType.Substring(hyphenLoc + 1);
+
+            subBreed = char.ToUpper(subBreed[0]) + subBreed.Substring(1);
+
+            dogType = subBreed + " " + breed;
+        }
+
+    }
+
+    private void FetchRandomDogImg()
+    {
+        imageURL = "https://dog.ceo/api/breeds/image/random";
+        OnInitializedAsync();
+
+        if (data.Status == "success")
+        {
+            dogImageURL = data.Message;
+
+            ExtractDogType();
+
+            FormatDogType();
+
+        }
+        else
+        {
+            dogImageURL = errorImageURL;
+            dogType = "Dog Not Found";
+        }
+
+
+    }
+
+    private void Search()
+    {
+        imageURL = string.Format("https://dog.ceo/api/breed/{0}/images/random", dogBreed);
+        OnInitializedAsync();
+
+        if (data.Status == "success")
+        {
+            dogImageURL = data.Message;
+
+            ExtractDogType();
+
+            FormatDogType();
+
+        }
+        else
+        {
+            dogImageURL = errorImageURL;
+            dogType = "Dog Not Found";
+        }
+
+    }
+
+    private void DogNotFound()
+    {
+        dogImageURL = errorImageURL;
+        dogType = "Dog Not Found";
+    }
+
+}
+
+@*Web API Add Cors
+    services.AddCors(o => o.AddPolicy("MyCORSpolicy", builder =>
+    {
+        builder.AllowAnyOrigin();
+    }));*@
