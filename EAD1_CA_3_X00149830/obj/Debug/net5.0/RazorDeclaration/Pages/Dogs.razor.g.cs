@@ -129,6 +129,25 @@ using EAD1_CA_3_X00149830.Shared;
             errormessage = e.StackTrace;
         }
 
+    }
+    protected  async void GetDogData()
+    {
+        try
+        {
+            // CORS needs to be enabled for Web API endpoint
+            data = await Http.GetFromJsonAsync<Root>(imageURL);
+            dogImageURL = data.Message;
+
+            ExtractDogType();
+
+            FormatDogType();
+        }
+        catch (Exception e)
+        {
+            errormessage = e.StackTrace;
+        }
+
+        StateHasChanged();
 
     }
 
@@ -172,7 +191,7 @@ using EAD1_CA_3_X00149830.Shared;
     private void FetchRandomDogImg()
     {
         imageURL = "https://dog.ceo/api/breeds/image/random";
-        OnInitializedAsync();
+        GetDogData();
 
         if (data.Status == "success")
         {
@@ -186,6 +205,7 @@ using EAD1_CA_3_X00149830.Shared;
         else
         {
             dogImageURL = errorImageURL;
+            dogType = "Dog Not Found";
         }
 
 
@@ -194,7 +214,7 @@ using EAD1_CA_3_X00149830.Shared;
     private void Search()
     {
         imageURL = string.Format("https://dog.ceo/api/breed/{0}/images/random", dogBreed);
-        OnInitializedAsync();
+        GetDogData();
 
         if (data.Status == "success")
         {
@@ -205,19 +225,18 @@ using EAD1_CA_3_X00149830.Shared;
             FormatDogType();
 
         }
-        if (data.Code == 404)
+        else
         {
             dogImageURL = errorImageURL;
+            dogType = "Dog Not Found";
         }
-
-        Console.WriteLine(data.Status);
 
     }
 
     private void DogNotFound()
     {
         dogImageURL = errorImageURL;
-        dogType = "Not Found";
+        dogType = "Dog Not Found";
     }
 
 
