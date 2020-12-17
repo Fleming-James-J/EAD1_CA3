@@ -1,0 +1,5 @@
+C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830_Test\obj\Debug\net5.0\EAD1_CA_3_X00149830_Test.csprojAssemblyReference.cache
+C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830_Test\obj\Debug\net5.0\EAD1_CA_3_X00149830_Test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830_Test\obj\Debug\net5.0\EAD1_CA_3_X00149830_Test.AssemblyInfoInputs.cache
+C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830_Test\obj\Debug\net5.0\EAD1_CA_3_X00149830_Test.AssemblyInfo.cs
+C:\Users\James_2\source\repos\EAD1_CA3_X00149830\EAD1_CA_3_X00149830_Test\obj\Debug\net5.0\EAD1_CA_3_X00149830_Test.csproj.CoreCompileInputs.cache

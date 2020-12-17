@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace EAD1_CA_3_X00149830.Pages
+namespace EAD1_CA_3_X00149830
 {
     #line hidden
     using System;
@@ -95,12 +95,6 @@ using EAD1_CA_3_X00149830.Shared;
        
 
 
-    public class Root
-    {
-        public string Message { get; set; }
-        public string Status { get; set; }
-        public int Code { get; set; }
-    }
 
     private Root data;
 
@@ -122,14 +116,16 @@ using EAD1_CA_3_X00149830.Shared;
             data = await Http.GetFromJsonAsync<Root>(imageURL);
             dogImageURL = data.Message;
 
-            ExtractDogType();
+            dogType = data.ExtractDogType(dogImageURL);
 
-            FormatDogType();
+            dogType = data.FormatDogType(dogType);
 
             AddDogBreedToList();
+
         }
         catch (Exception e)
         {
+
             errormessage = e.StackTrace;
         }
 
@@ -141,13 +137,15 @@ using EAD1_CA_3_X00149830.Shared;
         {
             // CORS needs to be enabled for Web API endpoint
             data = await Http.GetFromJsonAsync<Root>(imageURL);
+
             dogImageURL = data.Message;
 
-            ExtractDogType();
+            dogType = data.ExtractDogType(dogImageURL);
 
-            FormatDogType();
+            dogType = data.FormatDogType(dogType);
 
             AddDogBreedToList();
+
         }
         catch (Exception e)
         {
@@ -158,85 +156,39 @@ using EAD1_CA_3_X00149830.Shared;
 
     }
 
-    //extracts the type of dog from the url by removing leadURL and then removing everything after the /
-    private void ExtractDogType()
-    {
-        string leadURL = "https://images.dog.ceo/breeds/";
-
-        dogType = dogImageURL.Remove(0, leadURL.Length);
-
-        int firstForwardSlash = dogType.IndexOf('/');
-
-        dogType = dogType.Remove(firstForwardSlash);
-
-    }
-
-    //Formats the dog type extracted from the response URL
-    private void FormatDogType()
-    {
-        //Capitalizes the first letter of the dog type
-        dogType = char.ToUpper(dogType[0]) + dogType.Substring(1);
-
-        //if the dog type has a sub breed it is joined with a hyphen and the breed is first for example terrier-silky
-        //this check for the hyphen, substrings dog type into breed and sub breed, then capitilzes sub breed
-        //finally changes dogtype to the more familiar subBreed Breed format we are used to.
-
-        if (dogType.Contains('-'))
-        {
-            string breed, subBreed;
-            int hyphenLoc = dogType.IndexOf('-');
-            breed = dogType.Substring(0, hyphenLoc);
-            subBreed = dogType.Substring(hyphenLoc + 1);
-
-            subBreed = char.ToUpper(subBreed[0]) + subBreed.Substring(1);
-
-            dogType = subBreed + " " + breed;
-        }
-
-    }
-
     private void FetchRandomDogImg()
     {
         imageURL = "https://dog.ceo/api/breeds/image/random";
         GetDogData();
 
-        if (data.Status == "success")
-        {
-            dogImageURL = data.Message;
+        dogImageURL = data.Message;
 
-            ExtractDogType();
+        dogType = data.ExtractDogType(dogImageURL);
 
-            FormatDogType();
+        dogType = data.FormatDogType(dogType);
 
-            AddDogBreedToList();
-
-
-        }
-        else
-        {
-            dogImageURL = errorImageURL;
-            dogType = "Dog Not Found";
-        }
-
+        AddDogBreedToList();
 
     }
 
     private void Search()
     {
-        imageURL = string.Format("https://dog.ceo/api/breed/{0}/images/random", dogBreed);
-        GetDogData();
+        dogBreed = dogBreed.ToLower();
 
-        if (data.Status == "success")
+        if (!System.String.IsNullOrWhiteSpace(dogBreed))
         {
+            imageURL = string.Format("https://dog.ceo/api/breed/{0}/images/random", dogBreed);
+            GetDogData();
             dogImageURL = data.Message;
 
-            ExtractDogType();
+            dogType = data.ExtractDogType(dogImageURL);
 
-            FormatDogType();
+            dogType = data.FormatDogType(dogType);
 
             AddDogBreedToList();
-
         }
+
+
         else
         {
             dogImageURL = errorImageURL;
@@ -250,7 +202,7 @@ using EAD1_CA_3_X00149830.Shared;
         if (!seenDogbreeds.Contains(dogType))
         {
             //adds it to front of list so last dog seen is at top of list
-            seenDogbreeds.Insert(0,dogType);
+            seenDogbreeds.Insert(0, dogType);
         }
     }
 
