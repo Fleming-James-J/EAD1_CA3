@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace EAD1_CA_3_X00149830
+﻿namespace EAD1_CA_3_X00149830
 {
     public class Root
     {
@@ -39,9 +37,9 @@ namespace EAD1_CA_3_X00149830
                 string breed, subBreed;
                 int hyphenLoc = dogType.IndexOf('-');
                 breed = dogType.Substring(0, hyphenLoc);
-                subBreed = dogType.Substring(hyphenLoc + 1);
+                subBreed = dogType[(hyphenLoc + 1)..];
 
-                subBreed = char.ToUpper(subBreed[0]) + subBreed.Substring(1);
+                subBreed = char.ToUpper(subBreed[0]) + subBreed[1..];
 
                 return  subBreed + " " + breed;
             }

@@ -1,5 +1,5 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using EAD1_CA_3_X00149830;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace EAD1_CA_3_X00149830_Test
 {
@@ -12,16 +12,16 @@ namespace EAD1_CA_3_X00149830_Test
         public void TestExtractDogType()
         {
             //Arrange
+            Root testData = new Root();
             string dogImageUrl = "https://images.dog.ceo/breeds/setter-irish/n02100877_5883.jpg";
-            string dogType = "";
-
-
-
-
-            //Assert
+            string actual;
+            string expected = "setter-irish";
 
             //Act
-            
+            actual = testData.ExtractDogType(dogImageUrl);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
 
         }
 
@@ -29,38 +29,18 @@ namespace EAD1_CA_3_X00149830_Test
         public void TestFormatDogType()
         {
             //Arrange
-
+            Root testData = new Root();
+            string dogType = "setter-irish";
+            string actual;
+            string expected = "Irish Setter";
             //Act
-
+            actual = testData.FormatDogType(dogType);
             //Assert
-
+            Assert.AreEqual(expected, actual);
 
         }
 
-        [TestMethod]
-        public void TestAddDogBreedToList()
-        {
-            //Arrange
 
-            //Act
-
-            //Assert
-
-        }
-
-        [TestMethod]
-        public void TestAddAlreadyAddedDogBreedToList()
-        {
-            //Arrange
-
-            //Act
-
-            //Assert
-        }
     }
 }
-}
-}
 
-}
-}

@@ -98,11 +98,12 @@ using EAD1_CA_3_X00149830.Shared;
 
     private Root data;
 
-    private string errorImageURL = "images/DogNotFound.jpg";
+    
+    private string errorEmptySearchURL = "images/emptyDogBowl.jpg";
     private string dogType = "";
     private string dogImageURL;
     private string imageURL = "https://dog.ceo/api/breeds/image/random";
-    private string errormessage;
+
 
     private List<string> seenDogbreeds = new List<string>();
 
@@ -126,7 +127,7 @@ using EAD1_CA_3_X00149830.Shared;
         catch (Exception e)
         {
 
-            errormessage = e.StackTrace;
+            Console.WriteLine(e.StackTrace);
         }
 
     }
@@ -149,7 +150,7 @@ using EAD1_CA_3_X00149830.Shared;
         }
         catch (Exception e)
         {
-            errormessage = e.StackTrace;
+            Console.WriteLine(e.StackTrace);
         }
 
         StateHasChanged();
@@ -173,27 +174,34 @@ using EAD1_CA_3_X00149830.Shared;
 
     private void Search()
     {
-        dogBreed = dogBreed.ToLower();
 
-        if (!System.String.IsNullOrWhiteSpace(dogBreed))
+        try
         {
-            imageURL = string.Format("https://dog.ceo/api/breed/{0}/images/random", dogBreed);
-            GetDogData();
-            dogImageURL = data.Message;
+            if (!System.String.IsNullOrWhiteSpace(dogBreed))
+            {
+                dogBreed = dogBreed.ToLower();
 
-            dogType = data.ExtractDogType(dogImageURL);
+                imageURL = string.Format("https://dog.ceo/api/breed/{0}/images/random", dogBreed);
+                GetDogData();
+                dogImageURL = data.Message;
 
-            dogType = data.FormatDogType(dogType);
+                dogType = data.ExtractDogType(dogImageURL);
 
-            AddDogBreedToList();
+                dogType = data.FormatDogType(dogType);
+
+                AddDogBreedToList();
+            }
+            else
+            {
+                dogImageURL = errorEmptySearchURL;
+                dogType = "Search field is empty";
+            }
+        }
+        catch(Exception e)
+        {
+            Console.WriteLine(e.StackTrace);
         }
 
-
-        else
-        {
-            dogImageURL = errorImageURL;
-            dogType = "Dog Not Found";
-        }
 
     }
 
