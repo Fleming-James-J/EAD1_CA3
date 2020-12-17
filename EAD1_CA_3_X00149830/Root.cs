@@ -22,15 +22,13 @@
             return dogType;
         }
 
+
+
         //Formats the dog type extracted from the response URL
         public string FormatDogType(string dogType)
         {
             //Capitalizes the first letter of the dog type
             dogType = char.ToUpper(dogType[0]) + dogType[1..];
-
-            //if the dog type has a sub breed it is joined with a hyphen and the breed is first for example terrier-silky
-            //this check for the hyphen, substrings dog type into breed and sub breed, then capitilzes sub breed
-            //finally changes dogtype to the more familiar subBreed Breed format we are used to.
 
             if (dogType.Contains('-'))
             {
