@@ -47,7 +47,7 @@
 
     private Root data;
 
-    
+
     private string errorEmptySearchURL = "images/emptyDogBowl.jpg";
     private string dogType = "";
     private string dogImageURL;
@@ -62,7 +62,7 @@
     {
         try
         {
-            // CORS needs to be enabled for Web API endpoint
+
             data = await Http.GetFromJsonAsync<Root>(imageURL);
             dogImageURL = data.Message;
 
@@ -85,7 +85,7 @@
     {
         try
         {
-            // CORS needs to be enabled for Web API endpoint
+
             data = await Http.GetFromJsonAsync<Root>(imageURL);
 
             dogImageURL = data.Message;
@@ -119,6 +119,9 @@
 
         AddDogBreedToList();
 
+        //clears search box when the random buttom is clicked
+        dogBreed = "";
+
     }
 
     private void Search()
@@ -139,6 +142,7 @@
                 dogType = data.FormatDogType(dogType);
 
                 AddDogBreedToList();
+
             }
             else
             {
@@ -158,7 +162,7 @@
     {
         if (!seenDogbreeds.Contains(dogType))
         {
-            //adds it to front of list so last dog seen is at top of list
+
             seenDogbreeds.Insert(0, dogType);
         }
     }
